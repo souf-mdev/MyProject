@@ -4,10 +4,14 @@ project(MyProject)
 
 include_directories(include)
 
-add_executable(MyProject main.cpp)
-target_link_libraries(MyProject factorial fibonacci palindrome)
-
 add_subdirectory(src)
+add_subdirectory(tests)
+enable_testing()
+
+add_executable(MyProject main.cpp)
+target_link_libraries(MyProject factorial fibonacci )
+
+
 
 find_package(Doxygen REQUIRED)
 if(DOXYGEN_FOUND)
